@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarav Shandilya | Student Researcher & Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ffffff;
+            --secondary: #fbfbfd;
+            --accent: #0071e3;
+            --accent-hover: #0077ed;
+            --text: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --border: #d2d2d7;
+            --shadow: rgba(0, 0, 0, 0.05);
+            --shadow-hover: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+            background: var(--secondary);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header */
+        header {
+            padding: 0;
+            position: sticky;
+            top: 0;
+            background: rgba(251, 251, 253, 0.72);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 22px;
+            height: 44px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 400;
+            transition: opacity 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 4rem 22px 3rem;
+            text-align: center;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: block;
+            box-shadow: 0 4px 16px var(--shadow-hover);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 1.08;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            letter-spacing: -0.015em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin: 1rem auto 2rem;
+            max-width: 700px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--text);
+            display: block;
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .contact-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+        }
+
+        .contact-link:hover {
+            color: var(--accent-hover);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            padding: 12px 22px;
+            border-radius: 980px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: scale(1.02);
+        }
+
+        /* Section Styles */
+        section {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 4rem 22px;
+        }
+
+        .section-header {
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .card {
+            background: var(--primary);
+            border-radius: 18px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.01em;
+        }
+
+        .card-subtitle {
+            color: var(--accent);
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .card-date {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            white-space: nowrap;
+            font-weight: 400;
+        }
+
+        .card-description {
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .card-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .card-list li {
+            color: var(--text-secondary);
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .card-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--primary);
+            border-radius: 18px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--secondary);
+            color: var(--text);
+            padding: 0.5rem 1rem;
+            border-radius: 980px;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            font-weight: 400;
+        }
+
+        .skill-tag:hover {
+            background: var(--accent);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Awards Grid */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .award-card {
+            background: var(--primary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .award-card:hover {
+            box-shadow: 0 4px 16px var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .award-title {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .award-org {
+            color: var(--accent);
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+            font-weight: 400;
+        }
+
+        .award-date {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            font-weight: 400;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            padding: 2rem 22px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.7rem;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">Aarav Shandilya</a>
+            <ul class="nav-links">
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="https://github.com/aaravshandilya" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="profile-photo.png" alt="Aarav Shandilya" class="profile-photo">
+            <h1>Hi, I'm Aarav 👋</h1>
+            <p class="hero-subtitle">
+                High school valedictorian passionate about quantum computing, AI, and applied physics. 
+                Currently conducting research at ASU and GCU while building the future of technology.
+            </p>
+            <div class="contact-links">
+                <a href="mailto:aaravshandilya@gmail.com" class="btn-primary">Get in touch</a>
+                <a href="#experience" class="contact-link">View my work →</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">4.98</span>
+                    <span class="stat-label">Weighted GPA</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">1/460</span>
+                    <span class="stat-label">Class Rank</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">1460</span>
+                    <span class="stat-label">PSAT Score</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">400+</span>
+                    <span class="stat-label">Volunteer Hours</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="section-header">
+                <h2 class="section-title">Experience</h2>
+                <p class="section-subtitle">Research positions and leadership roles</p>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Research Intern</h3>
+                            <p class="card-subtitle">Arizona State University & Dell</p>
+                        </div>
+                        <span class="card-date">June 2025 - Present</span>
+                    </div>
+                    <p class="card-description">
+                        Researching quantum annealing and optimization techniques for NP-hard problems. Developing CPLEX models and benchmarking classical vs quantum-inspired methods for Dell enterprise applications.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Research Intern</h3>
+                            <p class="card-subtitle">Grand Canyon University</p>
+                        </div>
+                        <span class="card-date">August 2025 - Present</span>
+                    </div>
+                    <p class="card-description">
+                        Integrating multiple robots with AI systems and designing curriculum for Bachelor's in AI program. Developing pre-therapist application and AI-powered antivirus prototype.
+                    </p>
+                </div>
+            </div>
+
+            <div class="two-column" style="margin-top: 1rem;">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Founder & President</h3>
+                            <p class="card-subtitle">Next Frontiers Education</p>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Founded nonprofit focused on expanding educational access. Leading team of four students.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Region 2 Parliamentarian</h3>
+                            <p class="card-subtitle">SkillsUSA</p>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Representing 7,000 members across Region 2. Ensuring proper parliamentary protocol and effective governance.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Founder & President</h3>
+                            <p class="card-subtitle">PVHS Cybersecurity Club</p>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Leading chapter of 30+ students. Fundraised hundreds of dollars and collaborated with industry professionals.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Cybersecurity Intern</h3>
+                            <p class="card-subtitle">NJCCIC</p>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Supported cybersecurity operations through analysis and research. Gained experience in threat awareness and incident response.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Research and development work</p>
+            </div>
+            <div class="two-column">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Fibrin Clot Architecture in Microgravity</h3>
+                            <p class="card-subtitle">Student Spaceflight Experiments (ISS)</p>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Co-Principal Investigator designing microgravity study for the International Space Station. Top 3 nationally, leading team of 5.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Quantum Supply Chain Optimization</h3>
+                            <p class="card-subtitle">ASU & Dell Collaboration</p>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Developing quantum annealing models for the Traveling Salesman Problem. Co-authoring research paper with professors and Dell researchers.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Black Hole Structure Reconstruction</h3>
+                            <p class="card-subtitle">NASA Hubble Data Analysis</p>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Built 2D/3D simulations of accretion disks and event horizons using NASA data, Python, and machine learning.
+                    </p>
+                    <a href="https://github.com/aaravshandilya/ScienceFairProject" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 0.9rem; margin-top: 0.5rem; display: inline-block;">View on GitHub →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Project ECHO</h3>
+                            <p class="card-subtitle">ECG Signal Extraction System</p>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Java-based pipeline to extract ECG waveforms from medical images and perform automated rhythm classification.
+                    </p>
+                    <a href="https://github.com/aaravshandilya/CSA_EKG" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 0.9rem; margin-top: 0.5rem; display: inline-block;">View on GitHub →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="awards">
+            <div class="section-header">
+                <h2 class="section-title">Awards & Achievements</h2>
+                <p class="section-subtitle">Recognition for academic excellence and competition success</p>
+            </div>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <h4 class="award-title">National Top 25</h4>
+                    <p class="award-org">Math League</p>
+                    <p class="award-date">March 2025</p>
+                </div>
+                <div class="award-card">
+                    <h4 class="award-title">Top 25 International</h4>
+                    <p class="award-org">International Math Bowl</p>
+                    <p class="award-date">October 2024</p>
+                </div>
+                <div class="award-card">
+                    <h4 class="award-title">Multiple Time AIME Qualifier</h4>
+                    <p class="award-org">AMC 10/12</p>
+                    <p class="award-date">2024, 2025</p>
+                </div>
+                <div class="award-card">
+                    <h4 class="award-title">State Champion - Arizona</h4>
+                    <p class="award-org">Purple Comet</p>
+                    <p class="award-date">April 2025</p>
+                </div>
+                <div class="award-card">
+                    <h4 class="award-title">AP Scholar with Distinction</h4>
+                    <p class="award-org">College Board</p>
+                    <p class="award-date">July 2025</p>
+                </div>
+                <div class="award-card">
+                    <h4 class="award-title">Engineering Design - Gold</h4>
+                    <p class="award-org">SkillsUSA</p>
+                    <p class="award-date">February 2025</p>
+                </div>
+                <div class="award-card">
+                    <h4 class="award-title">Astronomy - Multiple Wins</h4>
+                    <p class="award-org">Science Olympiad</p>
+                    <p class="award-date">November 2025</p>
+                </div>
+                <div class="award-card">
+                    <h4 class="award-title">Bronze Division</h4>
+                    <p class="award-org">USACO</p>
+                    <p class="award-date">January 2025</p>
+                </div>
+                <div class="award-card">
+                    <h4 class="award-title">Top 50 International</h4>
+                    <p class="award-org">MIT Informatics Tournament</p>
+                    <p class="award-date">March 2025</p>
+                </div>
+                <div class="award-card">
+                    <h4 class="award-title">Top 20 International</h4>
+                    <p class="award-org">CALICO Competition</p>
+                    <p class="award-date">March 2025</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="section-header">
+                <h2 class="section-title">Technical Skills</h2>
+                <p class="section-subtitle">Programming languages, tools, and competencies</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C/C++</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Specialized Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">CPLEX</span>
+                        <span class="skill-tag">Qiskit</span>
+                        <span class="skill-tag">Vector Databases</span>
+                        <span class="skill-tag">CAD Software</span>
+                        <span class="skill-tag">Cloud Computing</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Research Areas</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Quantum Computing</span>
+                        <span class="skill-tag">Artificial Intelligence</span>
+                        <span class="skill-tag">Signal Processing</span>
+                        <span class="skill-tag">Data Analysis</span>
+                        <span class="skill-tag">Computational Modeling</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Certifications</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">IBM Quantum Enigmas</span>
+                        <span class="skill-tag">IT Specialist - Python</span>
+                        <span class="skill-tag">IT Specialist - Java</span>
+                        <span class="skill-tag">IT Specialist - AI</span>
+                        <span class="skill-tag">Autodesk Fusion Certified</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Aarav Shandilya · Phoenix, Arizona</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="mailto:aaravshandilya@gmail.com">aaravshandilya@gmail.com</a> · 
+            <a href="https://linkedin.com/in/aarav-shandilya-bb8a67354/" target="_blank">LinkedIn</a> · 
+            <a href="https://github.com/aaravshandilya" target="_blank">GitHub</a>
+        </p>
+        <p style="margin-top: 1rem; opacity: 0.6;">© 2026 Aarav Shandilya. All rights reserved.</p>
+    </footer>
+</body>
+</html>
