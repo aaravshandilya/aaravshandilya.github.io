@@ -25,11 +25,26 @@ export default function Research() {
           <p className="mb-6 text-xs font-semibold uppercase tracking-wider text-[var(--accent)]">
             Research affiliations
           </p>
-          <div className="flex flex-wrap gap-x-10 gap-y-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {affiliations.map((a) => (
-              <div key={a.name}>
-                <p className="text-base font-semibold text-[var(--text-strong)]">{a.name}</p>
-                <p className="text-xs text-[var(--text-faint)]">{a.note}</p>
+              <div
+                key={a.name}
+                className="flex min-h-48 flex-col overflow-hidden rounded-2xl border border-[var(--card-border)] bg-[var(--card-surface)] shadow-soft"
+              >
+                <div className="flex h-28 items-center justify-center bg-white p-4">
+                  <img
+                    src={a.logo}
+                    alt={`${a.name} logo`}
+                    width="240"
+                    height="112"
+                    loading="lazy"
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-4">
+                  <p className="text-sm font-semibold text-[var(--text-strong)]">{a.name}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-[var(--text-faint)]">{a.note}</p>
+                </div>
               </div>
             ))}
           </div>

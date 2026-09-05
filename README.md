@@ -149,13 +149,10 @@ rather than guessed. Open items, roughly in order of importance:
   on the site. Publishing other people's personal/work emails on a public
   page they haven't necessarily agreed to isn't standard portfolio practice;
   a "references available on request" line can be added if wanted.
-- **Organization logos** (ASU, Dell, Microsoft, Oxford, Grand Canyon
-  University, Paradise Valley HS/CREST, SkillsUSA) — no official logo files
-  were supplied, and none were generated (the brief is explicit that logos
-  should come from official brand-resource pages, never be redrawn by AI).
-  Affiliations currently render as plain text labels
-  (`src/data/interests.js` → `affiliations`). Drop official SVGs into
-  `public/images/organizations/` and swap in an `<img>` if desired.
+- **Organization logos** — supplied official assets for Arizona State
+  University, Dell Technologies, Grand Canyon University, Non-Trivial, and
+  the University of Oxford are displayed in the research-affiliations grid
+  (`src/data/interests.js` → `affiliations`).
 - **Project/research imagery** — no diagrams, screenshots, or charts were
   supplied for the supply-chain, pangenome, or platinum-QML work, so none
   were fabricated (no invented runtime charts, matrices, or result figures).

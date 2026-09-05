@@ -8,11 +8,31 @@ export const interests = [
 
 // Affiliations shown in a tasteful strip / within relevant cards. No employment,
 // sponsorship, or formal-partnership claim is implied — each carries its own
-// accurate label. No official logo assets were supplied, so these render as
-// clean text marks rather than corporate logos (see README "Content audit").
+// accurate label and supplied organization logo.
 export const affiliations = [
-  { name: "University of Oxford", note: "Research Lead & Intern" },
-  { name: "Arizona State University", note: "Research collaboration (SCENE mentorship program)" },
-  { name: "Dell Technologies", note: "Research collaboration on supply-chain optimization" },
-  { name: "Grand Canyon University", note: "Research Intern" },
+  {
+    name: "University of Oxford",
+    note: "Research Lead & Intern",
+    logo: "/images/organizations/oxford.svg",
+  },
+  {
+    name: "Arizona State University",
+    note: "Research collaboration (SCENE mentorship program)",
+    logo: "/images/organizations/asu.png",
+  },
+  {
+    name: "Dell Technologies",
+    note: "Research collaboration on supply-chain optimization",
+    logo: "/images/organizations/dell.png",
+  },
+  {
+    name: "Grand Canyon University",
+    note: "Research Intern",
+    logo: "/images/organizations/gcu.png",
+  },
+  {
+    name: "Non-Trivial",
+    note: "Foundations & Fellowship",
+    logo: "/images/organizations/non-trivial.svg",
+  },
 ];
